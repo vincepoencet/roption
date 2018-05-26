@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "removeComments": false,
+    "outDir": "build",
+    "sourceMap": true,
+    "lib": [
+      "es2015"
+    ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "tests/**/*.ts"
+  ],
+}
