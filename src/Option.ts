@@ -1,6 +1,6 @@
 import { Err, Result, Ok } from "./Result";
 
-class _Some<T> {
+export class _Some<T> {
   constructor(
     private readonly value: T,
   ) {}
@@ -70,7 +70,7 @@ class _Some<T> {
   }
 }
 
-class _None<T> {
+export class _None<T> {
   constructor(
   ) {}
 

@@ -6,6 +6,7 @@
     "outDir": "build",
     "sourceMap": true,
     "declaration": true,
+    "strict": false,
     "lib": [
       "es2015"
     ]

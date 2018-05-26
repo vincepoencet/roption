@@ -1,6 +1,6 @@
 import { Some, None, Option } from "./Option";
 
-class _Ok<T, E> {
+export class _Ok<T, E> {
   constructor(
     private readonly value: T,
   ) {}
@@ -76,7 +76,7 @@ class _Ok<T, E> {
   }
 }
 
-class _Err<T, E> {
+export class _Err<T, E> {
   constructor(
     private readonly error: E,
   ) {}
