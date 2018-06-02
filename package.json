@@ -2,8 +2,8 @@
   "name": "roption",
   "version": "1.0.3",
   "description": "",
-  "main": "build/index.js",
-  "types": "build/index.d.ts",
+  "main": "build/src/index.js",
+  "types": "build/src/index.d.ts",
   "scripts": {
     "clean": "rm -rf build .nyc_output",
     "build": "npm run clean && tsc",
