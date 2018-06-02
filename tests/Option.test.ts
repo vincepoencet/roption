@@ -229,4 +229,26 @@ describe('Option', () => {
       expect(res.unwrapErr()).to.equals('error');
     });
   });
+
+  describe('match', () => {
+    it('should call some function for Some', () => {
+      const option = Some(42);
+      const str = option.match(
+        x => x.toString(),
+        () => 'None',
+      );
+
+      expect(str).to.equals('42');
+    });
+
+    it('should call none function for None', () => {
+      const option = None<number>();
+      const str = option.match(
+        x => x.toString(),
+        () => 'None',
+      );
+
+      expect(str).to.equals('None');
+    });
+  })
 });

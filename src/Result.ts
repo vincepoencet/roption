@@ -74,6 +74,10 @@ export class _Ok<T, E> {
     process.exit(1);
     throw new Error(`PANIC: ${msg}`);
   }
+
+  match<R>(fOk: (wrapped: T) => R, fErr: (err: E) => R) {
+    return fOk(this.value);
+  }
 }
 
 export class _Err<T, E> {
@@ -151,6 +155,10 @@ export class _Err<T, E> {
 
   expectErr(msg: string): E {
     return this.error;
+  }
+
+  match<R>(fOk: (wrapped: T) => R, fErr: (err: E) => R) {
+    return fErr(this.error);
   }
 }
 

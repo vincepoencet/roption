@@ -179,4 +179,26 @@ describe('Result', () => {
       expect(Err(2).expectErr('Boom !!!')).to.equals(2);
     });
   });
+
+  describe('match', () => {
+    it('should call ok function for Ok', () => {
+      const result = Ok(42);
+      const str = result.match(
+        x => x.toString(),
+        err => 'Error',
+      );
+
+      expect(str).to.equals('42');
+    });
+
+    it('should call none function for None', () => {
+      const option = Err<number, string>('Boom!');
+      const str = option.match(
+        x => x.toString(),
+        err => err,
+      );
+
+      expect(str).to.equals('Boom!');
+    });
+  });
 });

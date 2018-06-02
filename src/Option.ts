@@ -68,6 +68,10 @@ export class _Some<T> {
   expect(msg: string): T {
     return this.value;
   }
+
+  match<R>(fSome: (wrapped: T) => R, fNone: () => R) {
+    return fSome(this.value);
+  }
 }
 
 export class _None<T> {
@@ -142,6 +146,10 @@ export class _None<T> {
 
     // only for compiler
     throw new Error(`PANIC: ${msg}`);
+  }
+
+  match<R>(fSome: (wrapped: T) => R, fNone: () => R) {
+    return fNone();
   }
 }
 
