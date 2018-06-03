@@ -1,4 +1,6 @@
 # roption
+[![Build Status](https://travis-ci.org/vincepoencet/roption.svg?branch=master)](https://travis-ci.org/vincepoencet/roption)
+
 Typescript Rust-like Option and Result types, with some small adjustments
 
 ## Install
