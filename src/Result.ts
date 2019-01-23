@@ -36,6 +36,10 @@ export class _Ok<T, E> {
     return Ok<R, E>(f(this.value))
   }
 
+  mapOrElse<R>(fErr: (error: E) => R, f: (wrapped: T) => R): R {
+    return f(this.value);
+  }
+
   mapErr<R>(f: (wrapped: E) => R): Result<T, R> {
     return Ok<T, R>(this.value);
   }
@@ -116,6 +120,10 @@ export class _Err<T, E> {
 
   map<R>(f: (wrapped: T) => R): Result<R, E> {
     return Err<R, E>(this.error);
+  }
+
+  mapOrElse<R>(fErr: (error: E) => R, f: (wrapped: T) => R): R {
+    return fErr(this.error);
   }
 
   mapErr<R>(f: (wrapped: E) => R): Result<T, R> {

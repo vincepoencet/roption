@@ -69,6 +69,20 @@ describe('Result', () => {
     });
   });
 
+  describe('mapOrElse', () => {
+    it('should apply provided function for Ok', () => {
+      const k = 21;
+      const result: Result<string, string> = Ok('foo');
+      expect(result.mapOrElse(err => k * 2, val => val.length)).to.equals(3);
+    });
+
+    it('should apply error function for Err', () => {
+      const k = 21;
+      const result: Result<string, string> = Err('Error');
+      expect(result.mapOrElse(err => k * 2, val => val.length)).to.equals(42);
+    });
+  });
+
   describe('mapErr', () => {
     it('should map Err<T, E> to Err<T, R>', () => {
       const result: Result<number, string> = Ok(3);
